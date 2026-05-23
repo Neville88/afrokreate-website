@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------- Design tokens ---------- */
+:root {
+  --navy: #1a1a2e;
+  --gold: #d4a017;
+  --leaf: #1b7a4e;
+  --cream: #f5f0e8;
+  --ink: #1a1a1a;
+  --paper: #faf7f1;
+  --whatsapp: #25d366;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  background-color: var(--cream);
+  color: var(--ink);
+  font-feature-settings: 'ss01', 'ss02';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Selection */
+::selection {
+  background: var(--gold);
+  color: var(--navy);
+}
+
+/* Heading defaults */
+h1, h2, h3, h4 {
+  font-family: 'Outfit', system-ui, sans-serif;
+  letter-spacing: -0.01em;
+  color: var(--navy);
+}
+
+/* ---------- Noise overlay (cream sections) ---------- */
+.noise::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  background-size: 220px 220px;
+  mix-blend-mode: multiply;
+}
+
+/* ---------- Subtle African geometric border (used on hero bottom + footer top) ---------- */
+.heritage-border {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 16' preserveAspectRatio='none'><g fill='none' stroke='%23D4A017' stroke-width='1' opacity='0.55'><path d='M0 8 L8 0 L16 8 L24 0 L32 8 L40 0 L48 8 L56 0 L64 8 L72 0 L80 8'/><path d='M0 8 L8 16 L16 8 L24 16 L32 8 L40 16 L48 8 L56 16 L64 8 L72 16 L80 8'/></g></svg>");
+  background-repeat: repeat-x;
+  background-size: 80px 14px;
+  background-position: center;
+  height: 14px;
+  width: 100%;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-medium tracking-wide transition-transform duration-300 ease-cinematic will-change-transform;
+}
+.btn:hover { transform: scale(1.03); }
+.btn:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+.btn-gold {
+  background: var(--gold);
+  color: var(--navy);
+  box-shadow: 0 6px 20px -6px rgba(212, 160, 23, 0.6);
+}
+.btn-gold:hover { background: #e5b026; }
+
+.btn-navy {
+  background: var(--navy);
+  color: #fafafa;
+}
+.btn-navy:hover { background: #2a2a45; }
+
+.btn-whatsapp {
+  background: var(--whatsapp);
+  color: #052e1a;
+}
+.btn-whatsapp:hover { background: #1ec55c; }
+
+.btn-outline {
+  border: 1.5px solid currentColor;
+  background: transparent;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: inherit;
+}
+.btn-ghost:hover { color: var(--gold); }
+
+/* Subtle link translateY on hover */
+.lift-link {
+  display: inline-block;
+  transition: transform 220ms ease-cinematic, color 220ms ease;
+}
+.lift-link:hover { transform: translateY(-1px); color: var(--gold); }
+
+/* ---------- Hero pattern hairline ---------- */
+.eyebrow {
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* ---------- Card defaults ---------- */
+.card {
+  @apply relative rounded-2xl bg-white/80 backdrop-blur-sm shadow-soft border border-black/5;
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---------- Reveal helper (GSAP starts elements hidden) ---------- */
+.reveal-up { opacity: 0; transform: translateY(28px); }
+.reveal-fade { opacity: 0; }
+
+/* Visual line separator dot */
+.dot::before {
+  content: '·';
+  margin: 0 0.5rem;
+  color: var(--gold);
+}
