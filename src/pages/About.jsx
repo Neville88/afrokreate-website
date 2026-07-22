@@ -71,8 +71,7 @@ const LEADERS = [
     name: 'David Clemy Kawooya',
     role: 'Social Entrepreneur & Mentor',
     bio: 'Bridges craft and commerce; mentors founders moving from idea into income.',
-    image:
-      'https://images.unsplash.com/photo-1531384441138-2736e62e0919?auto=format&fit=crop&w=800&q=80',
+    image: TEAM_IMG('david-kawooya.png'),
   },
 ];
 
