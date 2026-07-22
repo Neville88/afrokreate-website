@@ -27,19 +27,19 @@ export default function CTABand() {
           reply to every learner.
         </p>
 
-        <div data-reveal className="mt-8 flex flex-wrap items-center justify-center gap-3">
+        <div data-reveal className="mt-8 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center justify-center gap-3">
           <a
             href={WHATSAPP_URL_HI}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn btn-whatsapp"
+            className="btn btn-whatsapp w-full sm:w-auto"
             aria-label="Try AfroKreate Navigator on WhatsApp"
           >
             <WhatsAppIcon size={20} />
             Try Navigator now
           </a>
-          <Link to="/contact" className="btn btn-gold">Apply for admission</Link>
-          <Link to="/contact" className="btn btn-outline text-navy border-navy/25 hover:bg-navy/5">
+          <Link to="/contact" className="btn btn-gold w-full sm:w-auto">Apply for admission</Link>
+          <Link to="/contact" className="btn btn-outline text-navy border-navy/25 hover:bg-navy/5 w-full sm:w-auto">
             Contact us
           </Link>
         </div>

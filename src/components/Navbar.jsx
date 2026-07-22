@@ -9,6 +9,7 @@ const links = [
   { to: '/', label: 'Home' },
   { to: '/programs', label: 'Programs' },
   { to: '/about', label: 'About' },
+  { to: '/survey', label: 'Survey' },
   { to: '/contact', label: 'Contact' },
 ];
 
@@ -29,26 +30,44 @@ export default function Navbar() {
     setOpen(false);
   }, [pathname]);
 
+  // Lock body scroll while the mobile menu is open
+  useEffect(() => {
+    document.body.classList.toggle('menu-open', open);
+    return () => document.body.classList.remove('menu-open');
+  }, [open]);
+
   // Hero is dark only on the home route — pick contrasting nav surface.
   const overHero = pathname === '/' && !scrolled;
 
   return (
-    <header className="fixed top-0 inset-x-0 z-40 px-4 pt-4">
+    <header className="fixed top-0 inset-x-0 z-40 px-3 sm:px-4 pt-[max(0.75rem,env(safe-area-inset-top))]">
+      {/* Dim overlay behind mobile menu */}
+      <button
+        type="button"
+        aria-label="Close menu"
+        tabIndex={open ? 0 : -1}
+        onClick={() => setOpen(false)}
+        className={[
+          'lg:hidden fixed inset-0 z-30 bg-navy/40 backdrop-blur-[2px] transition-opacity duration-300',
+          open ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none',
+        ].join(' ')}
+      />
+
       <nav
         aria-label="Primary"
         className={[
-          'mx-auto flex items-center justify-between gap-3 transition-all duration-500 ease-cinematic',
+          'relative z-40 mx-auto flex items-center justify-between gap-2 sm:gap-3 transition-all duration-500 ease-cinematic',
           'rounded-full border',
           overHero
             ? 'max-w-6xl bg-white/10 border-white/20 backdrop-blur-md text-cream'
             : 'max-w-6xl bg-cream/85 border-black/5 backdrop-blur-md text-navy shadow-soft',
-          'pl-4 pr-2 py-2',
+          'pl-3 sm:pl-4 pr-1.5 sm:pr-2 py-2',
         ].join(' ')}
       >
         <Link
           to="/"
           aria-label="The AfroKreate Academy — home"
-          className="flex items-center"
+          className="flex items-center min-w-0"
         >
           <Logo tone={overHero ? 'cream' : 'navy'} />
         </Link>
@@ -129,13 +148,13 @@ export default function Navbar() {
       {/* Mobile menu sheet */}
       <div
         className={[
-          'lg:hidden mx-auto max-w-6xl mt-2 origin-top transition-all duration-300 ease-cinematic',
+          'lg:hidden relative z-40 mx-auto max-w-6xl mt-2 origin-top transition-all duration-300 ease-cinematic',
           open
             ? 'opacity-100 scale-y-100 pointer-events-auto'
             : 'opacity-0 scale-y-95 pointer-events-none',
         ].join(' ')}
       >
-        <div className="rounded-3xl bg-cream border border-black/5 shadow-soft p-4 text-navy">
+        <div className="rounded-3xl bg-cream border border-black/5 shadow-soft p-4 text-navy max-h-[min(80dvh,calc(100dvh-6rem))] overflow-y-auto">
           <ul className="flex flex-col">
             {links.map((l) => (
               <li key={l.to}>

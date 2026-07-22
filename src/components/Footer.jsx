@@ -15,7 +15,7 @@ import {
 export default function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer className="relative bg-navy text-cream rounded-t-[3rem] mt-24">
+    <footer className="relative bg-navy text-cream rounded-t-[2rem] sm:rounded-t-[3rem] mt-16 sm:mt-24 pb-[max(0rem,env(safe-area-inset-bottom))]">
       <div className="heritage-border absolute -top-px inset-x-0" aria-hidden="true" />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-10 pt-20 pb-10 grid gap-12 md:grid-cols-2 lg:grid-cols-4">
@@ -67,11 +67,11 @@ export default function Footer() {
               <Phone size={18} className="mt-0.5 text-gold shrink-0" aria-hidden="true" />
               <a href={PHONE_TEL} className="lift-link">{PHONE_DISPLAY}</a>
             </li>
-            <li className="flex items-start gap-3">
+            <li className="flex items-start gap-3 min-w-0">
               <Mail size={18} className="mt-0.5 text-gold shrink-0" aria-hidden="true" />
-              <div className="space-y-1">
-                <a href={`mailto:${EMAIL_PRIMARY}`} className="lift-link block">{EMAIL_PRIMARY}</a>
-                <a href={`mailto:${EMAIL_SECONDARY}`} className="lift-link block text-cream/65 text-xs">
+              <div className="space-y-1 min-w-0">
+                <a href={`mailto:${EMAIL_PRIMARY}`} className="lift-link block break-all">{EMAIL_PRIMARY}</a>
+                <a href={`mailto:${EMAIL_SECONDARY}`} className="lift-link block text-cream/65 text-xs break-all">
                   {EMAIL_SECONDARY}
                 </a>
               </div>

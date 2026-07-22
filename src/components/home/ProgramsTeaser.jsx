@@ -105,7 +105,7 @@ export default function ProgramsTeaser() {
             href={WHATSAPP_URL_HI}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn btn-whatsapp shrink-0"
+            className="btn btn-whatsapp w-full sm:w-auto shrink-0"
             aria-label="Try AfroKreate Navigator on WhatsApp"
           >
             <WhatsAppIcon size={18} />

@@ -215,25 +215,29 @@ function ContactForm() {
         />
       </label>
 
-      <div className="flex flex-wrap items-center justify-between gap-3 pt-2">
-        <p className="text-xs text-ink/60 max-w-sm">
+      <div className="flex flex-col gap-4 pt-2">
+        <p className="text-xs text-ink/60 max-w-sm break-words">
           Submitting opens your email client with a prefilled message to{' '}
-          <a className="underline" href={`mailto:${EMAIL_PRIMARY}`}>
+          <a className="underline break-all" href={`mailto:${EMAIL_PRIMARY}`}>
             {EMAIL_PRIMARY}
           </a>
           . Or chat with us instantly on WhatsApp.
         </p>
-        <div className="flex gap-3">
+        <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto sm:ml-auto">
           <a
             href={`mailto:${EMAIL_PRIMARY}`}
-            className="btn btn-outline text-navy border-navy/20 hover:bg-navy/5"
+            className="btn btn-outline text-navy border-navy/20 hover:bg-navy/5 w-full sm:w-auto"
           >
             <Mail size={16} aria-hidden="true" />
             Email instead
           </a>
-          <button type="submit" className="btn btn-gold" disabled={status === 'sending'}>
+          <button
+            type="submit"
+            className="btn btn-gold w-full sm:w-auto"
+            disabled={status === 'sending'}
+          >
             <Send size={16} aria-hidden="true" />
-            {status === 'sent' ? 'Sent — check your mail app' : 'Send message'}
+            {status === 'sent' ? 'Sent' : 'Send message'}
           </button>
         </div>
       </div>
@@ -253,7 +257,7 @@ function CopyableLine({ label, value, href, isWhatsApp }) {
     }
   };
   return (
-    <div className="flex items-start gap-3">
+    <div className="flex items-start gap-3 min-w-0">
       <div className="mt-0.5 text-gold shrink-0">
         {label === 'Phone' ? (
           <Phone size={18} />
@@ -265,13 +269,16 @@ function CopyableLine({ label, value, href, isWhatsApp }) {
           <MapPin size={18} />
         )}
       </div>
-      <div className="flex-1">
+      <div className="flex-1 min-w-0">
         <p className="text-xs uppercase tracking-widest text-navy/55">{label}</p>
         <a
           href={href}
           target={isWhatsApp ? '_blank' : undefined}
           rel={isWhatsApp ? 'noopener noreferrer' : undefined}
-          className="lift-link text-navy font-medium"
+          className={[
+            'lift-link text-navy font-medium',
+            label === 'Email' ? 'break-all' : 'break-words',
+          ].join(' ')}
         >
           {value}
         </a>
@@ -280,7 +287,7 @@ function CopyableLine({ label, value, href, isWhatsApp }) {
         type="button"
         onClick={copy}
         aria-label={`Copy ${label}`}
-        className="text-navy/40 hover:text-navy transition"
+        className="text-navy/40 hover:text-navy transition shrink-0"
       >
         {copied ? <Check size={16} /> : <Copy size={16} />}
       </button>
@@ -394,12 +401,12 @@ function DonateBlock() {
           share donation pathways tailored to you &mdash; individual, corporate, or
           institutional.
         </p>
-        <div data-reveal className="mt-8 flex flex-wrap items-center justify-center gap-3">
+        <div data-reveal className="mt-8 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center justify-center gap-3">
           <a
             href={WHATSAPP_URL_HI}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn btn-whatsapp"
+            className="btn btn-whatsapp w-full sm:w-auto"
             aria-label="Talk to our team on WhatsApp via AfroKreate Navigator"
           >
             <WhatsAppIcon size={18} />
@@ -407,7 +414,7 @@ function DonateBlock() {
           </a>
           <a
             href={`mailto:${EMAIL_PRIMARY}?subject=Donation%20inquiry`}
-            className="btn btn-outline border-white/30 text-cream hover:bg-white/10"
+            className="btn btn-outline border-white/30 text-cream hover:bg-white/10 w-full sm:w-auto"
           >
             <Mail size={16} aria-hidden="true" />
             Email about donating

@@ -23,7 +23,7 @@ export default function Logo({ tone = 'navy', compact = false }) {
           <span className="block text-[0.62rem] uppercase tracking-[0.32em] opacity-70">
             The
           </span>
-          <span className="block text-base sm:text-lg">AfroKreate Academy</span>
+          <span className="block text-[0.95rem] sm:text-lg">AfroKreate Academy</span>
         </span>
       )}
     </span>

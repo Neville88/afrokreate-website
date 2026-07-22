@@ -52,20 +52,20 @@ const VALUES = [
   },
 ];
 
+const TEAM_IMG = (file) => `${import.meta.env.BASE_URL}images/team/${file}`;
+
 const LEADERS = [
   {
     name: 'Enoch Joel Kazibwe',
     role: 'Co-Founder & Team Leader',
     bio: 'Sets the academy&rsquo;s direction and stewards the culture our cohorts learn inside.',
-    image:
-      'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=800&q=80',
+    image: TEAM_IMG('enoch-kazibwe.png'),
   },
   {
     name: 'Allan G. Nkonge',
     role: 'Finance & Strategic Planning',
     bio: 'Keeps the operation honest &mdash; numbers, sustainability, long-range strategy.',
-    image:
-      'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80',
+    image: TEAM_IMG('allan-nkonge.png'),
   },
   {
     name: 'David Clemy Kawooya',
@@ -179,13 +179,13 @@ function HeadMessage() {
         <div data-reveal className="md:col-span-5">
           <div className="relative rounded-3xl overflow-hidden shadow-soft">
             <img
-              src="https://images.unsplash.com/photo-1573497019418-b400bb3ab074?auto=format&fit=crop&w=900&q=80"
-              alt="Portrait of Feaona Nakishero, Head of The AfroKreate Academy."
+              src={TEAM_IMG('pheona-nakishero.png')}
+              alt="Portrait of Pheona Nakishero, Head of The AfroKreate Academy."
               loading="lazy"
-              className="w-full aspect-[4/5] object-cover"
+              className="w-full aspect-[4/5] object-cover object-top"
             />
             <div className="absolute bottom-0 inset-x-0 p-5 bg-gradient-to-t from-navy/85 to-transparent text-cream">
-              <p className="font-display text-lg">Feaona Nakishero</p>
+              <p className="font-display text-lg">Pheona Nakishero</p>
               <p className="text-cream/75 text-sm">Head of The AfroKreate Academy</p>
             </div>
           </div>
@@ -260,7 +260,7 @@ function Leadership() {
                   src={p.image}
                   alt={`Portrait of ${p.name}.`}
                   loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-700 ease-cinematic hover:scale-[1.04]"
+                  className="w-full h-full object-cover object-top transition-transform duration-700 ease-cinematic hover:scale-[1.04]"
                 />
               </div>
               <div className="p-6">

@@ -102,8 +102,8 @@ function Programme({ idx, eyebrow, title, body, image, highlights, kicker }) {
               </li>
             ))}
           </ul>
-          <div data-reveal className="mt-7 flex flex-wrap gap-3">
-            <Link to="/contact" className="btn btn-gold">
+          <div data-reveal className="mt-7 flex flex-col sm:flex-row flex-wrap gap-3">
+            <Link to="/contact" className="btn btn-gold w-full sm:w-auto">
               Apply now
               <ArrowRight size={16} aria-hidden="true" />
             </Link>
@@ -111,7 +111,7 @@ function Programme({ idx, eyebrow, title, body, image, highlights, kicker }) {
               href={WHATSAPP_URL_HI}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-outline text-navy border-navy/25 hover:bg-navy/5"
+              className="btn btn-outline text-navy border-navy/25 hover:bg-navy/5 w-full sm:w-auto"
               aria-label="Ask AfroKreate Navigator on WhatsApp"
             >
               <WhatsAppIcon size={16} />
@@ -149,7 +149,7 @@ function SIYBSection() {
           </p>
         </div>
 
-        <div data-reveal className="mt-10 grid gap-3 md:grid-cols-4">
+        <div data-reveal className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {SIYB_STEPS.map((s) => {
             const Icon = s.icon;
             return (
@@ -218,7 +218,7 @@ export default function Programs() {
               href={WHATSAPP_URL_HI}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-whatsapp shrink-0"
+              className="btn btn-whatsapp w-full sm:w-auto shrink-0"
               aria-label="Try AfroKreate Navigator on WhatsApp"
             >
               <WhatsAppIcon size={18} />
@@ -272,7 +272,7 @@ export default function Programs() {
                 href={WHATSAPP_URL_HI}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-whatsapp"
+                className="btn btn-whatsapp w-full md:w-auto"
                 aria-label="Try AfroKreate Navigator on WhatsApp"
               >
                 <WhatsAppIcon size={20} />

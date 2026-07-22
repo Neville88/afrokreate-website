@@ -52,7 +52,7 @@ export default function Accordion({ items, allowMultiple = false }) {
               role="region"
               aria-labelledby={headerId}
               hidden={!isOpen}
-              className="pb-6 pr-12 text-ink/80 leading-relaxed"
+              className="pb-6 pr-4 sm:pr-12 text-ink/80 leading-relaxed"
             >
               {typeof it.a === 'string' ? <p>{it.a}</p> : it.a}
             </div>

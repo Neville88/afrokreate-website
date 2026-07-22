@@ -1,7 +1,7 @@
 // Compact, consistent header for inner pages — keeps Hero scope on Home only.
 export default function PageHeader({ eyebrow, title, italic, lead, image }) {
   return (
-    <header className="relative isolate overflow-hidden bg-navy text-cream pt-36 pb-24 sm:pt-40 sm:pb-28">
+    <header className="relative isolate overflow-hidden bg-navy text-cream pt-32 pb-16 sm:pt-40 sm:pb-28">
       {image && (
         <>
           <img
@@ -17,16 +17,16 @@ export default function PageHeader({ eyebrow, title, italic, lead, image }) {
         </>
       )}
       <div className="heritage-border absolute bottom-0 inset-x-0" aria-hidden="true" />
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
+      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-10">
         <p className="eyebrow text-gold">{eyebrow}</p>
-        <h1 className="mt-4 font-display text-4xl sm:text-5xl md:text-6xl leading-[1.05] text-cream max-w-3xl">
+        <h1 className="mt-4 font-display text-3xl sm:text-5xl md:text-6xl leading-[1.08] sm:leading-[1.05] text-cream max-w-3xl">
           {title}{' '}
           {italic && (
             <span className="font-serif italic text-gold">{italic}</span>
           )}
         </h1>
         {lead && (
-          <p className="mt-6 max-w-2xl text-cream/80 text-lg leading-relaxed">{lead}</p>
+          <p className="mt-5 sm:mt-6 max-w-2xl text-cream/80 text-base sm:text-lg leading-relaxed">{lead}</p>
         )}
       </div>
     </header>

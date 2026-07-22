@@ -8,6 +8,7 @@ import Home from './pages/Home.jsx';
 import Programs from './pages/Programs.jsx';
 import About from './pages/About.jsx';
 import Contact from './pages/Contact.jsx';
+import GreenJobsSurvey from './pages/GreenJobsSurvey.jsx';
 
 export default function App() {
   const location = useLocation();
@@ -19,6 +20,7 @@ export default function App() {
       '/programs': 'Programs — The AfroKreate Academy',
       '/about': 'About — The AfroKreate Academy',
       '/contact': 'Contact — The AfroKreate Academy',
+      '/survey': 'Survey — AI, green jobs & your future (anonymous)',
     };
     document.title = titles[location.pathname] || titles['/'];
   }, [location.pathname]);
@@ -33,6 +35,7 @@ export default function App() {
           <Route path="/programs" element={<Programs />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/survey" element={<GreenJobsSurvey />} />
           <Route path="*" element={<Home />} />
         </Routes>
       </main>

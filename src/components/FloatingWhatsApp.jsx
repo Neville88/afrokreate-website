@@ -51,7 +51,8 @@ export default function FloatingWhatsApp() {
       rel="noopener noreferrer"
       aria-label="Open AfroKreate Navigator on WhatsApp"
       className={[
-        'fixed z-50 right-5 bottom-5 sm:right-7 sm:bottom-7',
+        'fixed z-50 right-4 sm:right-7',
+        'bottom-[max(1.25rem,env(safe-area-inset-bottom))] sm:bottom-7',
         'inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16',
         'rounded-full bg-whatsapp text-white shadow-soft',
         'transition-all duration-500 ease-cinematic',

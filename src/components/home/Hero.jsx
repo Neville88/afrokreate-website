@@ -112,53 +112,54 @@ export default function Hero() {
   return (
     <section
       ref={root}
-      className="relative isolate min-h-[90dvh] w-full overflow-hidden bg-navy text-cream"
+      className="relative isolate min-h-0 md:min-h-[90dvh] w-full overflow-hidden bg-navy text-cream"
       aria-labelledby="hero-heading"
     >
       <img
-        src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&w=2000&q=80"
+        src={`${import.meta.env.BASE_URL}images/hero-mentorship.png`}
         alt=""
         aria-hidden="true"
-        className="absolute inset-0 w-full h-full object-cover object-center scale-105"
+        className="absolute inset-0 w-full h-full object-cover object-[center_45%] scale-105"
       />
       <div
-        className="absolute inset-0 bg-gradient-to-r from-[#1A1A2E]/95 via-[#1A1A2E]/80 to-[#1A1A2E]/40"
+        className="absolute inset-0 bg-gradient-to-r from-[#1A1A2E]/96 via-[#1A1A2E]/82 to-[#1A1A2E]/55"
         aria-hidden="true"
       />
       <div
-        className="absolute inset-0 bg-gradient-to-t from-[#1A1A2E]/95 via-[#1A1A2E]/30 to-transparent md:via-transparent"
+        className="absolute inset-0 bg-gradient-to-t from-[#1A1A2E]/95 via-[#1A1A2E]/35 to-transparent md:via-[#1A1A2E]/15"
         aria-hidden="true"
       />
       <div className="heritage-border absolute bottom-0 inset-x-0" aria-hidden="true" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 pt-36 pb-28 md:pt-40 md:pb-32 grid md:grid-cols-12 gap-10 lg:gap-12 items-end min-h-[90dvh]">
+      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-10 pt-32 pb-16 sm:pt-36 sm:pb-24 md:pt-40 md:pb-32 grid md:grid-cols-12 gap-8 lg:gap-12 items-end md:min-h-[90dvh]">
         {/* Left: copy + CTAs */}
         <div className="md:col-span-7 lg:col-span-7">
           {/* Navigator badge */}
           <span
             data-hero-badge
-            className="inline-flex items-center gap-2 rounded-full bg-leaf/15 border border-leaf/30 px-3 py-1.5 text-[11px] font-mono tracking-[0.22em] uppercase text-leaf"
+            className="inline-flex items-center gap-2 rounded-full bg-leaf/15 border border-leaf/30 px-3 py-1.5 text-[10px] sm:text-[11px] font-mono tracking-[0.14em] sm:tracking-[0.22em] uppercase text-leaf"
           >
-            <WhatsAppIcon size={12} className="text-leaf" />
-            AfroKreate Navigator · WhatsApp
+            <WhatsAppIcon size={12} className="text-leaf shrink-0" />
+            <span className="sm:hidden">Navigator · WhatsApp</span>
+            <span className="hidden sm:inline">AfroKreate Navigator · WhatsApp</span>
           </span>
 
-          <p data-hero-eyebrow className="mt-5 eyebrow text-gold/90">
+          <p data-hero-eyebrow className="mt-4 sm:mt-5 eyebrow text-gold/90">
             Build your skills, shape your future
           </p>
           <h1
             id="hero-heading"
-            className="mt-4 font-display font-semibold leading-[0.98] text-cream"
+            className="mt-3 sm:mt-4 font-display font-semibold leading-[1.02] sm:leading-[0.98] text-cream"
           >
             <span
               data-hero-line-1
-              className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
+              className="block text-[2rem] sm:text-5xl md:text-6xl lg:text-7xl"
             >
               Invest in futures,
             </span>
             <span
               data-hero-line-2
-              className="block font-serif italic font-medium text-gold text-5xl sm:text-6xl md:text-7xl lg:text-[5rem] mt-1"
+              className="block font-serif italic font-medium text-gold text-[2.15rem] sm:text-6xl md:text-7xl lg:text-[5rem] mt-1"
             >
               build communities.
             </span>
@@ -166,7 +167,7 @@ export default function Hero() {
 
           <p
             data-hero-sub
-            className="mt-7 max-w-xl text-cream/85 text-base sm:text-lg leading-relaxed"
+            className="mt-5 sm:mt-7 max-w-xl text-cream/85 text-[0.95rem] sm:text-lg leading-relaxed"
           >
             Your next step, on WhatsApp &mdash; meet{' '}
             <strong className="text-cream font-semibold">AfroKreate Navigator</strong>, our
@@ -174,38 +175,38 @@ export default function Hero() {
             next step. <span className="text-cream/70">No app download. Just chat.</span>
           </p>
 
-          <div data-hero-cta className="mt-9 flex flex-wrap items-center gap-3">
+          <div data-hero-cta className="mt-7 sm:mt-9 flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3">
             <a
               href={WHATSAPP_URL_HI}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-whatsapp text-base"
+              className="btn btn-whatsapp text-base w-full sm:w-auto"
               aria-label="Try AfroKreate Navigator on WhatsApp"
             >
               <WhatsAppIcon size={20} />
               <span>Try Navigator now</span>
             </a>
-            <Link to="/contact" className="btn btn-gold text-base">
+            <Link to="/contact" className="btn btn-gold text-base w-full sm:w-auto">
               Apply for admission
             </Link>
             <Link
               to="/programs"
-              className="btn btn-outline text-cream/90 hover:text-cream"
+              className="btn btn-outline text-cream/90 hover:text-cream w-full sm:w-auto"
             >
               Explore programmes
             </Link>
           </div>
 
-          <p data-hero-trust className="mt-7 text-xs text-cream/65 tracking-wide">
+          <p data-hero-trust className="mt-6 sm:mt-7 text-xs text-cream/65 tracking-wide leading-relaxed">
             Trusted by learners across East Africa
             <span className="dot" />
             Kampala · Pan-African vision
           </p>
         </div>
 
-        {/* Right: chat mockup */}
+        {/* Right: chat mockup — desktop only to keep the first mobile viewport uncluttered */}
         <aside
-          className="md:col-span-5 lg:col-span-5 md:self-end"
+          className="hidden md:block md:col-span-5 lg:col-span-5 md:self-end"
           aria-label="AfroKreate Navigator chat preview"
           data-hero-mock
         >

@@ -27,7 +27,7 @@ function CardCreative() {
     return () => ctx.revert();
   }, []);
   return (
-    <article ref={ref} data-reveal className="card p-8 group">
+    <article ref={ref} data-reveal className="card p-6 sm:p-8 group">
       <div className="flex items-center justify-between">
         <div className="w-12 h-12 rounded-2xl bg-gold/15 text-gold flex items-center justify-center">
           <Palette size={22} aria-hidden="true" />
@@ -78,7 +78,7 @@ function CardEntrepreneurship() {
     return () => ctx.revert();
   }, []);
   return (
-    <article ref={ref} data-reveal className="card p-8">
+    <article ref={ref} data-reveal className="card p-6 sm:p-8">
       <div className="flex items-center justify-between">
         <div className="w-12 h-12 rounded-2xl bg-leaf/15 text-leaf flex items-center justify-center">
           <Briefcase size={22} aria-hidden="true" />
@@ -91,7 +91,7 @@ function CardEntrepreneurship() {
         the ILO&rsquo;s Start &amp; Improve Your Business framework.
       </p>
       <p
-        className="mt-6 font-mono text-sm text-navy bg-cream/80 border border-black/5 rounded-xl px-4 py-3"
+        className="mt-6 font-mono text-sm text-navy bg-cream/80 border border-black/5 rounded-xl px-4 py-3 break-words"
         aria-live="polite"
       >
         <span className="text-leaf">$</span> {typed}
@@ -104,7 +104,7 @@ function CardEntrepreneurship() {
 function CardYouth() {
   const items = ['Cohort community', '1:1 mentorship', 'Real-world projects', 'Pathways to work'];
   return (
-    <article data-reveal className="card p-8 transition-transform duration-500 ease-cinematic hover:-translate-y-1.5 hover:shadow-[0_20px_60px_-20px_rgba(26,26,46,0.35)]">
+    <article data-reveal className="card p-6 sm:p-8 transition-transform duration-500 ease-cinematic hover:-translate-y-1.5 hover:shadow-[0_20px_60px_-20px_rgba(26,26,46,0.35)]">
       <div className="flex items-center justify-between">
         <div className="w-12 h-12 rounded-2xl bg-navy/10 text-navy flex items-center justify-center">
           <Users size={22} aria-hidden="true" />
