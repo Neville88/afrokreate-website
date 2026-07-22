@@ -119,14 +119,18 @@ export default function Hero() {
         src={`${import.meta.env.BASE_URL}images/hero-mentorship.png`}
         alt=""
         aria-hidden="true"
-        className="absolute inset-0 w-full h-full object-cover object-[center_45%] scale-105"
+        className="absolute inset-0 w-full h-full object-cover object-[center_45%] scale-110 blur-[2.5px] sm:blur-[3px]"
       />
       <div
-        className="absolute inset-0 bg-gradient-to-r from-[#1A1A2E]/96 via-[#1A1A2E]/82 to-[#1A1A2E]/55"
+        className="absolute inset-0 bg-[#1A1A2E]/55"
         aria-hidden="true"
       />
       <div
-        className="absolute inset-0 bg-gradient-to-t from-[#1A1A2E]/95 via-[#1A1A2E]/35 to-transparent md:via-[#1A1A2E]/15"
+        className="absolute inset-0 bg-gradient-to-r from-[#1A1A2E]/92 via-[#1A1A2E]/75 to-[#1A1A2E]/50"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute inset-0 bg-gradient-to-t from-[#1A1A2E]/95 via-[#1A1A2E]/40 to-[#1A1A2E]/25"
         aria-hidden="true"
       />
       <div className="heritage-border absolute bottom-0 inset-x-0" aria-hidden="true" />
